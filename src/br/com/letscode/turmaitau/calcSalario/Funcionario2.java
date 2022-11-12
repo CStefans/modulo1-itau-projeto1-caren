@@ -4,13 +4,13 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Objects;
 
-public class Funcionario {
+public class Funcionario2 {
 
     private String nome;
     private String cpf;
     private BigDecimal salarioBase;
 
-    public Funcionario(String nome, String cpf, BigDecimal salarioBase) {
+    public Funcionario2(String nome, String cpf, BigDecimal salarioBase) {
         this.nome = nome;
         this.cpf = cpf;
         this.salarioBase = salarioBase;
@@ -41,28 +41,6 @@ public class Funcionario {
 
     public BigDecimal getSalarioBase() {
         return salarioBase;
-    }
-
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("Funcionario: \n");
-        sb.append("nome= ").append(nome).append("\n");
-        sb.append("cpf= ").append(cpf).append("\n");
-        sb.append("salarioBase= ").append(salarioBase);
-        return sb.toString();
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Funcionario that = (Funcionario) o;
-        return Objects.equals(cpf, that.cpf);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(cpf);
     }
 
 }

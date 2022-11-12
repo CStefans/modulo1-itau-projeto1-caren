@@ -3,18 +3,17 @@ package br.com.letscode.turmaitau.calcSalario;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
-public class CalcSalarioScannerMain {
+public class CalculaSalarioScanMain {
 
     Scanner entrada = new Scanner(System.in);
 
     public static void main(String[] args) {
 
-        CalcSalarioScannerMain calcSalarioScannerMain = new CalcSalarioScannerMain();
+        CalculaSalarioScanMain calculaSalarioScanMain = new CalculaSalarioScanMain();
 
         while (true) {
             try {
-                calcSalarioScannerMain.calcularSalario();
-                //...
+                calculaSalarioScanMain.calcularSalario();
             } catch (NomeException e) {
                 System.out.println("Erro de validacao de Nome: " + e.getMessage() + "\n" +
                         "Entre com os dados novamente.");
@@ -27,7 +26,7 @@ public class CalcSalarioScannerMain {
             } catch (Exception e) {
                 System.out.println("Erro: " + e.getMessage());
             } finally {
-                calcSalarioScannerMain.entrada = new Scanner(System.in);
+                calculaSalarioScanMain.entrada = new Scanner(System.in);
                 System.out.println("Fechou recurso scanner");
             }
         }
@@ -36,19 +35,19 @@ public class CalcSalarioScannerMain {
 
     private void calcularSalario() throws ValidacaoException, CPFException {
 
-        System.out.println("Nome: ");
+        System.out.printf("Nome: ");
         String nome = entrada.nextLine();
         if (nome.isBlank()) {
             throw new NomeException("Nome é obrigatorio");
         }
 
-        System.out.println("CPF: ");
+        System.out.printf("CPF: ");
         String cpf = entrada.nextLine();
         if (cpf.isBlank()) {
             throw new CPFException("CPF invalido");
         }
 
-        System.out.println("Salario: ");
+        System.out.printf("Salario: ");
         BigDecimal salario = new BigDecimal(entrada.next());
 
         System.out.println("Dias trabalhados: ");
